@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@mui/material": "^5.0.0-rc.0",
     "@supabase/supabase-js": "^1.22.3",
     "@supabase/ui": "^0.33.1",
     "autoprefixer": "^10.3.2",
