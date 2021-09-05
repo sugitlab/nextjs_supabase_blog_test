@@ -2,6 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
+import gfm from 'remark-gfm';
 import { supabase } from '../../api'
 
 const Post = ( post : PostType ) => {
@@ -14,7 +15,7 @@ const Post = ( post : PostType ) => {
       <h1>{post.title}</h1>
       <p>by {post.user_email}</p>
       <div>
-        <ReactMarkdown className = "prose">
+        <ReactMarkdown plugins={[gfm]}>
           {post.content}
         </ReactMarkdown>
       </div>

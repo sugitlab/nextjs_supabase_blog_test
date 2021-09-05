@@ -1,8 +1,10 @@
+import { useState, useEffect } from 'react'
 import type { AppProps } from 'next/app'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
-import { supabase } from '../api'
 import { User } from '@supabase/supabase-js'
+import  Button from '@mui/material/Button'
+import { supabase } from '../api'
+
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -26,17 +28,17 @@ function MyApp({ Component, pageProps }: AppProps) {
     <div>
       <nav>
         <Link passHref href="/">
-          <span>Home</span>
+          <Button>Home</Button>
         </Link>
         {
           user && (
             <Link passHref href="/create-post">
-              <span>Create Post</span>
+              <Button>Create Post</Button>
             </Link>
           )
         }
         <Link passHref href="/profile">
-          <span>Profile</span>
+          <Button>Profile</Button>
         </Link>
       </nav>
       <div>
