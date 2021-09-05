@@ -9,8 +9,6 @@ const Post = ( post : PostType ) => {
   if (router.isFallback) {
     return <div>Loading...</div>
   }
-  console.log(post)
-  console.log(post.title)
   return (
     <div>
       <h1>{post.title}</h1>
