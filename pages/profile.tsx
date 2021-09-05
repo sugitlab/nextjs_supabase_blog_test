@@ -1,19 +1,23 @@
 import { Auth, Typography, Button } from "@supabase/ui"
+import { SupabaseClient } from '@supabase/supabase-js'
 import { supabase } from '../api'
 const { Text } = Typography
 
-const Profile = (props: any) => {
+type SupabaseAuth = {
+  supabaseClient: SupabaseClient
+}
+const Profile: React.FC<SupabaseAuth> = ({ supabaseClient, children }) => {
   const { user } = Auth.useUser()
   if (user) 
     return (
       <>
         <Text>Signed in: { user.email } </Text>
-        <Button block onClick = { () => props.supabaseClient.auth.signOut() }>
+        <Button block onClick = { () => supabaseClient.auth.signOut() }>
           Sign out
         </Button>
       </>
     )
-  return props.children
+  return <>{children}</>
 }
 
 const AuthProfile = () => {
