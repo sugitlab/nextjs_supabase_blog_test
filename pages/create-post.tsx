@@ -6,7 +6,6 @@ import 'easymde/dist/easymde.min.css'
 import { supabase } from '../api'
 import { PostType } from './posts/[id]'
 
-
 type PickedPost = Pick<PostType, 'id' | 'title' | 'content'>
 const SimpleMDE = dynamic(() => import('react-simplemde-editor'), { ssr: false })
 const initialState: PickedPost = {id: '', title: '', content: '' }

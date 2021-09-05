@@ -4,11 +4,13 @@ import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import { supabase } from '../../api'
 
-const Post = ( post: PostType) => {
+const Post = ( post : PostType ) => {
   const router = useRouter()
   if (router.isFallback) {
     return <div>Loading...</div>
   }
+  console.log(post)
+  console.log(post.title)
   return (
     <div>
       <h1>{post.title}</h1>
@@ -58,8 +60,6 @@ export const getStaticProps = async ({ params }: Params) => {
     .filter('id', 'eq', id)
     .single()
   return {
-    props: {
-      post: data
-    }
+    props: data
   }
 }
