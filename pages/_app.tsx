@@ -4,8 +4,7 @@ import Link from 'next/link'
 import { User } from '@supabase/supabase-js'
 import { Button, IconHome, IconPenTool, IconUser } from '@supabase/ui'
 import { supabase } from '../api'
-
-
+import '../styles/global.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [user, setUser] = useState<User|null>(null)

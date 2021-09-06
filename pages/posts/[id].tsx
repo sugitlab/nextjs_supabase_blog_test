@@ -1,6 +1,6 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import React from 'react'
+import { Typography } from '@supabase/ui'
 import markdownHtml from 'zenn-markdown-html';
 import { supabase } from '../../api'
 import 'zenn-content-css';
@@ -17,8 +17,7 @@ const Post = ({post, html}: {post: PostType, html: string}) => {
 
   return (
     <div style={{width: '70vw', minWidth: '480px', maxWidth:'920px', margin: 'auto', padding: '12pt'}}>
-      <h1>{post.title}</h1>
-      <p>by {post.user_email}</p>
+      <Typography.Title level={2}>{post.title}</Typography.Title>
       <div>
         <span className="znc" dangerouslySetInnerHTML={{ __html: html }}></span>
       </div>

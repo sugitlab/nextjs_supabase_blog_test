@@ -29,7 +29,11 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet"></link>
+          <link 
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap"
+            rel="stylesheet"
+          >
+          </link>
         </Head>
         <body>
           <ThemeProvider theme={appTheme}>
