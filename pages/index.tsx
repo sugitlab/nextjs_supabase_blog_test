@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Typography from '@mui/material/Typography'
+import { Typography } from '@supabase/ui'
 import Paper from '@mui/material/Paper'
 import { supabase } from '../api'
 import { PostType } from './posts/[id]'
@@ -24,18 +24,21 @@ const Home = () => {
 
   return (
     <div>
-      <Typography variant="h3" gutterBottom component="div">Posts</Typography>
       {
         posts.map(post => (
-            <Link key={post.id} passHref href={`/posts/${post.id}`}>
-              <Paper elevation={2} sx={{ p:4, m:2 }}>
-                <Typography variant="h4" gutterBottom component="div">
+          <Link key={post.id} passHref href={`/posts/${post.id}`}>
+            <Paper elevation={2} sx={{ pt: 1, pb: 2, pl: 4, pr: 2, m: 2 }}>
+              <div>
+                <Typography.Title level={3}>
                   {post.title}
-                </Typography>
-                <Typography variant="subtitle1" gutterBottom component="div">Author: {post.user_email}</Typography>
-              </Paper>
-            </Link>
-          )
+                </Typography.Title>
+              </div>
+              <Typography.Text type="secondary">
+                Author: {post.user_email}
+              </Typography.Text>
+            </Paper>
+          </Link>
+        )
         )
       }
     </div>
