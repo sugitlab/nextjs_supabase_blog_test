@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }
 
   return (
-    <div>
+    <div style={{width: '70vw', maxWidth: '920px', minWidth:'480px', margin:'auto'}}>
       <nav>
         <Link passHref href="/">
           <Button type="link" size="large" icon={<IconHome strokeWidth={2} />} style={{fontWeight: 'bold'}}>Home</Button>

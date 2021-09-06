@@ -1,7 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { createTheme, ThemeProvider, ThemeOptions, Palette, PaletteOptions } from '@mui/material/styles';
 
-
 declare module '@mui/material/styles' {
   interface Theme {
     palette: Palette;
@@ -30,10 +29,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-          />
+          <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet"></link>
         </Head>
         <body>
           <ThemeProvider theme={appTheme}>
